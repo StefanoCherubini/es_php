@@ -1,9 +1,17 @@
 <?php 
-class Alunno {
+class Alunno implements JsonSerializable{
     protected $nome;
     protected $cognome;
     protected $eta;
    
+    public function jsonSerialize(): array {
+        return [
+            'name'=> $this->nome,
+            'surname'=> $this->cognome,
+            'age'=> $this->eta
+        ];
+    }
+
     function __construct($nome,$cognome,$eta) {
         $this->nome = $nome;
         $this->cognome = $cognome;
