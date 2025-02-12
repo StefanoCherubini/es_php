@@ -1,6 +1,6 @@
 <?php
 require_once 'Veicolo.php';
-class Automobile extends Veicolo
+class Automobile extends Veicolo implements JsonSerializable
 {
     public $marca;
     public $anno;
@@ -12,6 +12,14 @@ class Automobile extends Veicolo
          $this-> anno = $anno;
          $this-> modello = $modello;
     } 
+
+    public function jsonSerialize(): array {
+        return [
+            'brand'=> $this->$zmarca,
+            'year'=> $this->anno,
+            'model'=> $this->modello
+        ];
+    }
 
     function set_modello($modello)
     {
