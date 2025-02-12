@@ -9,6 +9,6 @@ array_push($Alunni,$Alunno1 ,$Alunno2);
 
 foreach($Alunni as $Alunno)
 {
-    $Alunno->stampa();
+    $Alunno->stampaTot();
 }
 ?>
