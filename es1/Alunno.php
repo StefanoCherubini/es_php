@@ -1,23 +1,37 @@
 <?php 
+require_once 'voti.php';
+require_once 'indirizzo.php';
 class Alunno implements JsonSerializable{
     protected $nome;
     protected $cognome;
     protected $eta;
-   
-    public function jsonSerialize(): array {
-        return [
-            'name'=> $this->nome,
-            'surname'=> $this->cognome,
-            'age'=> $this->eta
-        ];
-    }
+    protected $voti = [];
+    protected $indirizzo;
+    protected $promosso;
 
-    function __construct($nome,$cognome,$eta) {
+   
+    function __construct($nome,$cognome,$eta,$voti,$indirizzo,$promosso) {
         $this->nome = $nome;
         $this->cognome = $cognome;
         $this->eta = $eta;
+        $this->voti = $voti;
+        $this->indirizzo = $indirizzo;
+        $this->promosso = $promosso;
     }
 
+
+    public function jsonSerialize(): array {
+        return [
+            'nome'=> $this->nome,
+            'cognome'=> $this->cognome,
+            'eta'=> $this->eta,
+            //'voti'=> $this->voti,
+            //'indirizzo'=> $this->indirizzo,
+            'promosso' => $this-> promosso
+        ];
+    }
+
+    
     function set_nome($nome){
         $this->nome = $nome;
     }
@@ -42,9 +56,7 @@ class Alunno implements JsonSerializable{
         return $this->eta;
     }
 
-    function stampa(){
-        echo "{$this->nome} {$this->cognome} {$this->eta} <br>";
-    }
+    
 }
 
 

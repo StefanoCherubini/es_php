@@ -1,0 +1,14 @@
+[
+    {
+      "nome": "Stefano",
+      "cognome": "Cherubini",
+      "eta": 18,
+      "promosso": true
+    },
+    {
+      "nome": "Tommaso",
+      "cognome": "Dell'osa",
+      "eta": 18,
+      "promosso": true
+    }
+]
